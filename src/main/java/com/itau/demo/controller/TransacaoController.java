@@ -1,13 +1,10 @@
 package com.itau.demo.controller;
 
-import com.itau.demo.dto.TransacaoDto;
+import com.itau.demo.dto.TransacaoRequest;
 import com.itau.demo.service.TransacaoService;
-import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.OffsetDateTime;
 
 /**
  {
@@ -27,7 +24,7 @@ public class TransacaoController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> addTransacao(@RequestBody TransacaoDto transacao) {
+    public ResponseEntity<Void> addTransacao(@RequestBody TransacaoRequest transacao) {
         try {
             transacaoService.addTransacao(transacao);
             return ResponseEntity.status(HttpStatus.CREATED).build();

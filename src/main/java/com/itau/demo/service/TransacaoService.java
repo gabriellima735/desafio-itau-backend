@@ -1,9 +1,8 @@
 package com.itau.demo.service;
 
-import com.itau.demo.dto.TransacaoDto;
+import com.itau.demo.dto.TransacaoRequest;
 import com.itau.demo.model.TransacaoModel;
 import com.itau.demo.repository.interfaces.TransacaoRepository;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -17,7 +16,7 @@ public class TransacaoService {
         this.transacaoRepository = transacaoRepository;
     }
 
-    public void addTransacao(TransacaoDto transacaoDto){
+    public void addTransacao(TransacaoRequest transacaoDto){
         OffsetDateTime agora = OffsetDateTime.now();
         if (transacaoDto.getValor().compareTo(BigDecimal.ZERO) < 0){
             throw new IllegalArgumentException("Valor não pode ser menor que 0!");
@@ -33,6 +32,5 @@ public class TransacaoService {
     public void delTransacoes(){
         transacaoRepository.deleteAll();
     }
-
 
 }

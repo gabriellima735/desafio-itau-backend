@@ -10,7 +10,7 @@ import java.time.OffsetDateTime;
 
 @Getter
 @Setter
-public class TransacaoDto {
+public class TransacaoRequest {
 
     @NotNull
     @PositiveOrZero

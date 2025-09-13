@@ -9,8 +9,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 @Repository
 public class TransacaoRepositoryInMemory implements TransacaoRepository {
-    private final List<TransacaoModel> transacoes = new CopyOnWriteArrayList<>();
-
+    private static List<TransacaoModel> transacoes = new CopyOnWriteArrayList<>();
 
     @Override
     public void save(TransacaoModel transacaoModel) {
@@ -21,6 +20,7 @@ public class TransacaoRepositoryInMemory implements TransacaoRepository {
     @Override
     public List<TransacaoModel> findAll() {
         System.out.println("Retorna");
+        auxPrint();
         return transacoes;
     }
 
