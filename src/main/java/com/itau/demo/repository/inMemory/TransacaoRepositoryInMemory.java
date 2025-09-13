@@ -31,8 +31,13 @@ public class TransacaoRepositoryInMemory implements TransacaoRepository {
     }
 
     private void auxPrint(){
-        System.out.println(">>>");
+        System.out.println("###");
         System.out.println(transacoes.toString());
-        System.out.println(">>>");
+        for(TransacaoModel t:transacoes){
+            System.out.println(
+                    t.toString()
+            );
+        }
+        System.out.println("###");
     }
 }

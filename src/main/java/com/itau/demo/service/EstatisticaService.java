@@ -22,7 +22,6 @@ public class EstatisticaService {
 
     public EstatisticaResponse calcularEstatistica() {
         OffsetDateTime limite = OffsetDateTime.now().minusSeconds(60);
-//        System.out.println(limite.getMinute() + " " + OffsetDateTime.now().getMinute());
         List<TransacaoModel> recentes = transacaoRepository
                 .findAll()
                 .stream()

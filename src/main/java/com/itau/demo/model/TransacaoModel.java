@@ -16,4 +16,12 @@ public class TransacaoModel {
         this.valor = valor;
         this.dataHora = dataHora;
     }
+
+    @Override
+    public String toString() {
+        return "TransacaoModel{" +
+                "valor=" + valor +
+                ", HORA=" + dataHora.getHour() + ", MINUTO=" + dataHora.getMinute() +
+                '}';
+    }
 }
