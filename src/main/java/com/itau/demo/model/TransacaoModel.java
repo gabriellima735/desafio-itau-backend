@@ -10,9 +10,7 @@ import java.time.OffsetDateTime;
 @Getter
 @Setter
 public class TransacaoModel {
-    @Schema(description = "Valor da transação")
     private BigDecimal valor;
-    @Schema(description = "Data e Hora da transação")
     private OffsetDateTime dataHora;
 
     public TransacaoModel(BigDecimal valor, OffsetDateTime dataHora) {

@@ -3,18 +3,15 @@ package com.itau.demo.controller;
 import com.itau.demo.dto.TransacaoRequest;
 import com.itau.demo.service.TransacaoService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/**
- {
- "valor": 200.00,
- "dataHora": "2025-09-12T17:00:00-03:00"
- }
- */
-
+@Tag(name = "Transação - Controller")
 @RestController
 @RequestMapping("/transacao")
 public class TransacaoController {
